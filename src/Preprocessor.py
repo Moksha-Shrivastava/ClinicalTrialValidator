@@ -1,0 +1,41 @@
+import pandas as pd
+
+def load_and_preprocess(data_path, symptoms_path, vax_path):
+    data = pd.read_csv(data_path, encoding="latin1")
+    symptoms = pd.read_csv(symptoms_path, encoding="latin1")
+    vax = pd.read_csv(vax_path, encoding="latin1")
+
+    vax = vax[["VAERS_ID", "VAX_TYPE", "VAX_ROUTE"]]
+  
+    symptoms = symptoms[["VAERS_ID"]]
+    
+    cdashstd = {
+        "VAERS_ID": "USUBJID",
+        "AGE_YRS": "AGE",
+        "ONSET_DATE": "AESTDTC",
+        "DATEDIED": "AEDTHDTC",
+        "DIED": "AESER_DEATH",
+        "HOSPITAL": "AESER_HOSP",
+        "VAX_DATE": "EXSTDTC",
+    }
+    data = data.rename(columns=cdashstd)
+    vax = vax.rename(columns=cdashstd)
+    symptoms = symptoms.rename(columns=cdashstd)
+
+    date = ["AESTDTC", "AEDTHDTC", "EXSTDTC"]
+
+    for column in date:
+        data[column] = pd.to_datetime(
+            data[column],
+            errors="coerce"
+        ).dt.strftime("%Y-%m-%d")
+
+    return data, symptoms, vax
+
+a = data, symptoms, vax = load_and_preprocess(
+    r'C:\Users\admin\Documents\2025VAERSDATA.csv',
+    r'C:\Users\admin\Documents\2025VAERSSYMPTOMS.csv',
+    r'C:\Users\admin\Documents\2025VAERSVAX.csv'
+)
+
+print (a)
