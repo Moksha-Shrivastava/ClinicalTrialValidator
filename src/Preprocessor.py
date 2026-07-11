@@ -31,11 +31,3 @@ def load_and_preprocess(data_path, symptoms_path, vax_path):
         ).dt.strftime("%Y-%m-%d")
 
     return data, symptoms, vax
-
-a = data, symptoms, vax = load_and_preprocess(
-    r'C:\Users\admin\Documents\2025VAERSDATA.csv',
-    r'C:\Users\admin\Documents\2025VAERSSYMPTOMS.csv',
-    r'C:\Users\admin\Documents\2025VAERSVAX.csv'
-)
-
-print (a)
