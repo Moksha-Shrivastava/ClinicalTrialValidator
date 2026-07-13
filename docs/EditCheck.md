@@ -8,9 +8,9 @@
 
 \*\*Date:\*\* July 2025
 
-\*\*Author:\*\* \[your name]
+\*\*Author:\*\* \Moksha Shrivastava
 
-\*\*Reference Standard:\*\* GCDMP Chapter 3, ICH E6(R2) ALCOA+
+\*\*Reference Standard:\*\* GCDMP Chapter 3, ICH E6(R2), ALCOA+
 
 
 
