@@ -12,7 +12,7 @@ class Validator:
     def hospcheck (self):
         for index, row in  self.data.iterrows():
             if row["AESER_HOSP"] =="Y" and pd.isna(row["HOSPDAYS"]):
-                self.queries.append({"User ID": row["USUBJID"], "Query": "The subject is marked hopitalized but number of days hospitalized is absent", "Error": "EC006, Major"})
+                self.queries.append({"User ID": row["USUBJID"], "Query": "The subject is marked hospitalized but number of days hospitalized is absent", "Error": "EC006, Major"})
     def vaxdatecheck (self):
         for index, row in  self.data.iterrows():
             if pd.isna(row["EXSTDTC"]):
@@ -46,20 +46,20 @@ class Validator:
             for index, row in  self.data.iterrows():
                 valids = ["PUB", "PVT", "MIL", "PHM", "SCH", "SEN", "WRK", "OTH", "UNK"]
                 if not pd.isna(row["V_ADMINBY"]) and row["V_ADMINBY"] not in valids:
-                    self.queries.append({"User ID": row["USUBJID"], "Query": "Entered value for administerer is invalid", "Error":"EC 0010, Minor"}) 
+                    self.queries.append({"User ID": row["USUBJID"], "Query": "Entered value for administerer is invalid", "Error":"EC 010, Minor"}) 
     def sexcheck (self):
             for index, row in  self.data.iterrows():
                 validv = ["F", "M", "U"]
                 if not pd.isna(row["SEX"]) and row["SEX"] not in validv:
-                    self.queries.append({"User ID": row["USUBJID"], "Query": "Entered value for sex is invalid", "Error":"EC 0011, Major"})
+                    self.queries.append({"User ID": row["USUBJID"], "Query": "Entered value for sex is invalid", "Error":"EC 011, Major"})
     def refidcheck (self):
         dataid = set(self.data["USUBJID"])
         for index, row in self.symptoms.iterrows():
             if row["USUBJID"] not in dataid:
-                self.queries.append({"User ID": row["USUBJID"], "Query": "Subject ID in VAERS2025SYMPTOMS.csv not found in VAERS2025DATA.csv file", "Error":"EC 0012, Critical"})
+                self.queries.append({"User ID": row["USUBJID"], "Query": "Subject ID in VAERS2025SYMPTOMS.csv not found in VAERS2025DATA.csv file", "Error":"EC 012, Critical"})
         for index, row in self.vax.iterrows():
             if row["USUBJID"] not in dataid:
-                self.queries.append({"User ID": row["USUBJID"], "Query": "Subject ID in VAERS2025VAX.csv not found in VAERS2025DATA.csv file", "Error":"EC 0012, Critical"})
+                self.queries.append({"User ID": row["USUBJID"], "Query": "Subject ID in VAERS2025VAX.csv not found in VAERS2025DATA.csv file", "Error":"EC 012, Critical"})
 
 from Preprocessor import load_and_preprocess
 
