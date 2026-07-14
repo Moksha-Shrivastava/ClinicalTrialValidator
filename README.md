@@ -1,6 +1,6 @@
 # ClinicalTrialValidator
 This is a edit check validator specific to the three VAERS 2025 datasets
----
+
 ## VAERS Dataset
 - It is a annual report on vaccines safety and pharmacovigialce study where possible adverse events associated to a vaccine is reported on a voluntary basis.
 - Three CSV files were used in this project featuring - 2025VAERSDATA.csv (listed general infomration such as vaccination date, sex etc), 2025VAERSSYMPTOMS.csv (listed various symptoms reported as adverse events post vaccination) and 2025VAERSVAX.csv (listed details about the vaccines recived such as route of administration and other information)
