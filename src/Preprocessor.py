@@ -1,6 +1,7 @@
 import pandas as pd
 
-def load_and_preprocess(data_path, symptoms_path, vax_path):
+def load_and_preprocess(data_path, symptoms_path, vax_path): # Loads three VAERS 2025 CSV files, selects relevant columns, renames them to CDASH-equivalent names and standardises date
+    columns to ISO 8601 format.
     data = pd.read_csv(data_path, encoding="latin1")
     symptoms = pd.read_csv(symptoms_path, encoding="latin1")
     vax = pd.read_csv(vax_path, encoding="latin1")
