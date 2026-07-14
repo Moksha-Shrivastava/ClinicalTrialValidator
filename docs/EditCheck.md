@@ -1,20 +1,20 @@
-\# Edit Check Specification
+# Edit Check Specification
 
-\## Study: VAERS-2025
+## Study: VAERS-2025
 
-\*\*Document Title:\*\* Edit Check Specification
+**Document Title:** Edit Check Specification
 
-\*\*Version:\*\* 1.0
+**Version:** 1.0
 
-\*\*Date:\*\* 13 July 2025
+**Date:** 13 July 2025
 
-\*\*Author:\*\* \Moksha Shrivastava
+**Author:** Moksha Shrivastava
 
-\*\*Reference Standard:\*\* GCDMP Chapter 3, ICH E6(R2), ALCOA+
+**Reference Standard:** GCDMP Chapter 3, ICH E6(R2), ALCOA+
 
 
 
-\### Edit Checks
+### Edit Checks
 
 Edit checks are a part of data quality metric system that compare entered clinical data against predefined criteria to detect any data entry error that may compromise it's reliability and accuracy. When a dataset or it's component fails an edit check, it usually generates a query for site staff to review and resolve.
 
