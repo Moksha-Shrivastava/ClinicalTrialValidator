@@ -1,5 +1,5 @@
 import pandas as pd
-class Validator:
+class Validator: #loads three 2025 VAERS fileas as data, symptoms and vax and checks each row of all the datasets for edit check violation and fires a query if a violation occurs
     def __init__(self, data, symptoms, vax):
         self.data = data
         self.symptoms = symptoms
